@@ -5,7 +5,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import premiumCalculator.*;
+import premiumCalculator.PremiumCalculator;
 import premiumCalculator.model.Policy;
 import premiumCalculator.model.PolicyObject;
 import premiumCalculator.model.PolicySubObject;
@@ -27,13 +27,13 @@ public class PremiumCalculatorTest {
 
     @Test
     public void testOne() {
-        Policy policy = createPolicy(RiskType.FIRE, RiskType.THIEFT, 100, 8);
+        Policy policy = createPolicy(RiskType.FIRE, RiskType.THEFT, 100, 8);
         assertEquals(2.28, premiumCalculator.calculate(policy), 0.01);
     }
 
     @Test
     public void testTwo() {
-        Policy policy = createPolicy(RiskType.FIRE, RiskType.THIEFT, 500, 102.51);
+        Policy policy = createPolicy(RiskType.FIRE, RiskType.THEFT, 500, 102.51);
         assertEquals(17.13, premiumCalculator.calculate(policy), 0.01);
     }
 

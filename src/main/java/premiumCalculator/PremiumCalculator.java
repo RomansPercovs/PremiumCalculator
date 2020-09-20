@@ -2,6 +2,9 @@ package premiumCalculator;
 
 import premiumCalculator.model.Policy;
 
+/**
+ * @return summed premiums for particular risk types.
+ */
 public interface PremiumCalculator {
-    public double calculate(Policy policy);
+    double calculate(Policy policy);
 }

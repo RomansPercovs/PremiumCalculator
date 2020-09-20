@@ -10,7 +10,7 @@ import premiumCalculator.model.RiskType;
 public class PremiumCalculatorImpl implements PremiumCalculator {
     public double calculate(Policy policy) {
         double premiumFire = getPremium(policy, RiskType.FIRE);
-        double premiumTheft = getPremium(policy, RiskType.THIEFT);
+        double premiumTheft = getPremium(policy, RiskType.THEFT);
         return premiumFire + premiumTheft;
     }
 
@@ -33,7 +33,7 @@ public class PremiumCalculatorImpl implements PremiumCalculator {
         switch (type) {
             case FIRE:
                 return sumInsured > 100 ? 0.024 : 0.014;
-            case THIEFT:
+            case THEFT:
                 return sumInsured >= 15 ? 0.05 : 0.11;
             default:
                 return 1;
